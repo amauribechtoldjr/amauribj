@@ -1,4 +1,19 @@
 .navbar {
-  font-size: 58px;
   font-weight: 800;
+  padding: var(--s-20) 0;
+  font-family: "kungfumaster";
+  letter-spacing: var(--ls-default);
+  height: 8vh;
+}
+
+.navbar__list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--s-24);
+}
+
+.navbar__item {
+  font-size: var(--fs-18);
+  cursor: pointer;
 }

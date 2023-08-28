@@ -1,4 +1,8 @@
-import globalStyles from "~/styles/global.css";
+import globalStyles from "~/assets/styles/global.css";
+import themeStyles from "~/assets/styles/themes.css";
+import kungFuMasterFont from "~/assets/fonts/kungfumaster.ttf";
+import fontFacesStyles from "~/assets/styles/fonts.css";
+import Navbar, { links as navbarLinks } from "~/components/Navbar";
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
@@ -11,6 +15,10 @@ import {
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: globalStyles },
+  { rel: "stylesheet", href: themeStyles },
+  { rel: "stylesheet", href: fontFacesStyles },
+  { rel: "stylesheet", href: kungFuMasterFont },
+  ...navbarLinks(),
 ];
 
 export default function App() {
@@ -23,6 +31,9 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <header>
+          <Navbar />
+        </header>
         <Outlet />
         <ScrollRestoration />
         <Scripts />

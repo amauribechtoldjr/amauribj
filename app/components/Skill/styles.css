@@ -1,0 +1,7 @@
+.skill {
+  display: inline-block;
+  padding: var(--s-4) var(--s-8);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: var(--fs-12);
+}
