@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useTransitionEffect from "~/hooks/useTransitionEffect";
 import Skill from "../Skill";
 import styles from "./styles.css";
@@ -29,7 +28,8 @@ const experiences: Experience[] = [
       "PHP",
       "GO",
     ],
-    description: "123123",
+    description:
+      "Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst.",
     startDate: "Jan 2020",
     endDate: "Current",
   },
@@ -38,7 +38,8 @@ const experiences: Experience[] = [
     companyName: "AMcom",
     jobTitle: "Desenvolvedor Front-end",
     skills: ["React", "Next.js", "Styled Components"],
-    description: "2",
+    description:
+      "Cras at viverra libero. Suspendisse rutrum sem id lectus gravida, ut pellentesque neque dictum. Duis nec lorem ac mauris pretium accumsan. Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst.",
     startDate: "Oct 2018",
     endDate: "Set 2019",
   },
@@ -47,7 +48,8 @@ const experiences: Experience[] = [
     companyName: "Bornlogic",
     jobTitle: "Desenvolvedor Front-end",
     skills: ["React", "Next.js", "Styled Components"],
-    description: "3",
+    description:
+      "Pellentesque vulputate urna ac quam lacinia, quis venenatis velit sodales. Ut eget tortor lacus. Nam est nisi, venenatis commodo vehicula ut, tristique ut augue. Nulla convallis commodo mauris a interdum.",
     startDate: "Oct 2018",
     endDate: "Set 2019",
   },
@@ -56,7 +58,8 @@ const experiences: Experience[] = [
     companyName: "Unimestre",
     jobTitle: "Desenvolvedor Front-end",
     skills: ["React", "Next.js", "Styled Components"],
-    description: "4",
+    description:
+      "Aliquam eu elementum augue. Fusce scelerisque pulvinar odio fringilla tristique. Phasellus ut porta mauris. Suspendisse posuere neque eu dictum vehicula. Sed vel urna eleifend, porttitor sem vitae, molestie tellus. Aenean a aliquam nulla. Morbi risus arcu, feugiat id lorem elementum, faucibus porta tortor. Mauris vehicula tellus eu arcu dignissim pellentesque a non massa. Integer quis volutpat massa. Nunc enim velit, tempus ac ligula sit amet, gravida fringilla velit.",
     startDate: "Oct 2018",
     endDate: "Set 2019",
   },
@@ -65,73 +68,48 @@ const experiences: Experience[] = [
     companyName: "Eureca",
     jobTitle: "Desenvolvedor Front-end",
     skills: ["React", "Next.js", "Styled Components"],
-    description: ["5", "tteste um dois três"],
+    description: [
+      "Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst. Aliquam eu elementum augue. Fusce scelerisque pulvinar odio fringilla tristique.",
+    ],
     startDate: "Oct 2018",
     endDate: "Set 2019",
   },
 ];
 
-export default function Experiences() {
-  const [selectedExperience, setSelectedExperience] = useState<Experience>(
-    experiences[0]
-  );
-
-  const { ref, isVisible } = useTransitionEffect();
-
-  const handleJobExperienceClick = (exp: Experience) => {
-    setSelectedExperience(exp);
-  };
+function ExperienceCard({ ...exp }: Experience) {
+  const { ref: cardRef, className } = useTransitionEffect({
+    originalClassName: "experienceCard",
+  });
 
   return (
-    <section
-      className={`experiences ${
-        isVisible ? "transitionVisible" : "transitionHide"
-      }`}
-      ref={ref}
-    >
+    <div className={className} ref={cardRef}>
+      <h2 className="experienceCard__title">{exp.jobTitle}</h2>
+      <a href={exp.companyName} className="experienceCard__company">
+        {exp.companyName}
+      </a>
+      <span className="experienceCard__timing">
+        {exp.startDate} - {exp.endDate}
+      </span>
+      <p className="experienceCard__description">{exp.description}</p>
+      <div className="experienceCard__skillsContainer">
+        {exp.skills.map((skill) => (
+          <Skill key={skill} name={skill} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function Experiences() {
+  return (
+    <section className={"experiences"}>
       <div>
         <h2 className="kungfuheading experiences__title">Experiência</h2>
       </div>
-      <div className="cards_wrapper">
-        <div className="experiences__cards">
-          {experiences.map((exp) => (
-            <div
-              className={`experiences__card`}
-              key={exp.id}
-              onClick={() => handleJobExperienceClick(exp)}
-            >
-              {selectedExperience.id === exp.id && (
-                <span className="experiences__card__activeIcon">{`>`}</span>
-              )}
-              <span className="experiences__card__title">
-                {`${exp.jobTitle} - ${exp.companyName}`}
-              </span>
-              <span className="experiences__card__date">
-                {`${exp.startDate} - ${exp.endDate}`}
-              </span>
-            </div>
-          ))}
-        </div>
-        <div className={`experiences__cardsContent`}>
-          <div className="experiences__descriptionsContainer">
-            {Array.isArray(selectedExperience.description) ? (
-              selectedExperience.description.map((exp, index) => (
-                <p key={index} className="experiences__cards__description">
-                  {exp}
-                </p>
-              ))
-            ) : (
-              <p className="experiences__cards__description">
-                {selectedExperience.description}
-              </p>
-            )}
-          </div>
-          <div className="experiences__contentSkills">
-            {selectedExperience.skills.map((skill) => (
-              <Skill key={skill} name={skill} />
-            ))}
-          </div>
-        </div>
+      <div className="experiences__cardsContainer">
+        {experiences.map((exp) => (
+          <ExperienceCard key={exp.id} {...exp} />
+        ))}
       </div>
     </section>
   );

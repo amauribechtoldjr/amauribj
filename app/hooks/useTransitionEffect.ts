@@ -1,10 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 
-const options = {
+const _options = {
   threshold: 0.6,
 };
 
-export default function useTransitionEffect() {
+interface UserTransitionEffect {
+  originalClassName: string;
+  options?: IntersectionObserverInit;
+}
+
+export default function useTransitionEffect({
+  originalClassName,
+  options = _options,
+}: UserTransitionEffect) {
   const [isVisible, setIsVisible] = useState(false);
 
   const ref = useRef(null);
@@ -29,7 +37,9 @@ export default function useTransitionEffect() {
   }, [ref]);
 
   return {
-    isVisible,
     ref,
+    className: `${originalClassName} ${
+      isVisible ? "transitionVisible" : "transitionHide"
+    }`,
   };
 }
