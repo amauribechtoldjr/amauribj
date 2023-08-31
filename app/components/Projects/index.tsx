@@ -26,12 +26,12 @@ function ProjectsCard({ img, project, skills, githubLink }: ProjectsCardProps) {
           src={img.src}
           alt={img.alt}
           className="projectsCard__img"
-          width={400}
-          height={400}
+          width={300}
+          height={300}
         />
       </div>
       <div className="projectsCard__infoContainer">
-        <span>{project.type}</span>
+        <span className="projectsCard__type">{project.type}</span>
         {project.url ? (
           <a
             href={project.url}
@@ -51,8 +51,8 @@ function ProjectsCard({ img, project, skills, githubLink }: ProjectsCardProps) {
           {skills.length > 0 &&
             skills.map((skill) => <Skill name={skill} key={skill} />)}
         </div>
-        {githubLink !== "" && (
-          <a href={githubLink}>
+        {githubLink && (
+          <a href={githubLink} target="_blank" rel="noreferrer">
             <img src={githubIcon} alt="Github Icon" width={32} height={32} />
           </a>
         )}
@@ -63,60 +63,51 @@ function ProjectsCard({ img, project, skills, githubLink }: ProjectsCardProps) {
 
 export default function Projects() {
   return (
-    <section className="sectionPage projects" id="projects">
+    <div className="sectionPage projects" id="projects">
       <span className="kungfuheading projects_title">Outros projetos</span>
       <div>
         <ProjectsCard
           img={{ src: eufestGif, alt: "" }}
           project={{
-            type: "Featured Project",
+            type: "Projeto profissional",
             name: "eufest.com.br",
-            description:
-              "Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst. Aliquam eu elementum augue. Fusce scelerisque pulvinar odio fringilla tristique.",
+            description: `Landing Page para o evento online EuFest, que aconteceu no ano de 2020. 
+              Projeto continha programação, informações sobre palestrantes e um cadastro de e-mail para acompanhar o evento (atualmente offline).`,
           }}
-          skills={[
-            "Shopify",
-            "Next.js",
-            "React",
-            "SASS",
-            "SASS",
-            "SASS",
-            "SASS",
-            "SASS",
-          ]}
+          skills={["React", "Gatsby", "SSR", "Mailchimp"]}
         />
         <ProjectsCard
           img={{ src: ecommerceImg, alt: "" }}
           project={{
-            type: "Study based project",
-            name: "Ecommerce fully integrated with Shopify",
+            type: "Projeto de estudo",
+            name: "Ecommerce + shopify",
             url: "http://www.travesssa.com",
-            description:
-              "Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst. Aliquam eu elementum augue. Fusce scelerisque pulvinar odio fringilla tristique.",
+            description: `Projeto de ecommerce totalmente integrado com API do Shopify. A loja foi desenvolvida com a ideia de ser um ecommerce de cerâmicas.`,
           }}
           skills={[
             "Shopify",
             "Next.js",
             "React",
             "SASS",
-            "SASS",
-            "SASS",
-            "SASS",
-            "SASS",
+            "GraphQL",
+            "SSR",
+            "SSG",
           ]}
+          githubLink="https://github.com/amauribechtoldjr/shopify-ecommerce"
         />
         <ProjectsCard
           img={{ src: portfolioImg, alt: "" }}
           project={{
-            type: "Featured Project",
-            name: "My portfolio",
-            description:
-              "Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst. Aliquam eu elementum augue. Fusce scelerisque pulvinar odio fringilla tristique.",
+            type: "Projeto profissional",
+            name: "Este portfólio",
+            description: `Meu portofólio pessoal.`,
+            url: "http://localhost:3000/",
           }}
-          skills={["Remix", "React"]}
+          skills={["RemixJs", "React", "Vanilla CSS"]}
+          githubLink="https://github.com/amauribechtoldjr/amauribj"
         />
       </div>
-    </section>
+    </div>
   );
 }
 

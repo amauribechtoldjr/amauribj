@@ -2,7 +2,7 @@ html {
   font-size: var(--fs-10);
 
   font-family: Arial, sans-serif;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 .sectionPage {
-  max-height: 92vh;
+  min-height: 92vh;
 
   padding: var(--s-96) 0;
 }

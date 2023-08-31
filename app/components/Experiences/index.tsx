@@ -17,68 +17,115 @@ const experiences: Experience[] = [
   {
     id: "solides",
     companyName: "Sólides",
-    jobTitle: "Desenvolvedor Front-end",
+    jobTitle: "Engenheiro de Software",
     skills: [
+      "Typescript",
+      "Javascript",
       "React",
-      "Next.js",
-      "Styled Components",
-      "SASS",
-      "Remix",
-      "Vercel",
+      "single-spa",
+      "Tailwind",
+      "AWS Lambda",
       "AWS S3",
-      "PHP",
-      "GO",
+      "Commander.js",
+      "Node.js",
     ],
-    description:
-      "Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst.",
+    description: [
+      "Atua no desenvolvimento e manutenção da arquitetura de micro-frontends da empresa. Esta arquitetura inclui o orquestrador dos micro-frontends, serviços como coletor de métricas dos frontends, uma CLI para deploy dos frontends e uma API backend para servir toda essa arquitetura.",
+      "Atua em colaboração com outros times dando mentoria através de code reviews e treinamentos.",
+    ],
     startDate: "Jan 2020",
     endDate: "Current",
     companyURL: "https://solides.com.br",
   },
-  {
-    id: "amcom",
-    companyName: "AMcom",
-    jobTitle: "Desenvolvedor Front-end",
-    skills: ["React", "Next.js", "Styled Components"],
-    description:
-      "Cras at viverra libero. Suspendisse rutrum sem id lectus gravida, ut pellentesque neque dictum. Duis nec lorem ac mauris pretium accumsan. Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst.",
-    startDate: "Oct 2018",
-    endDate: "Set 2019",
-    companyURL: "https://amcom.com.br",
-  },
+
   {
     id: "bornlogic",
     companyName: "Bornlogic",
-    jobTitle: "Desenvolvedor Front-end",
-    skills: ["React", "Next.js", "Styled Components"],
-    description:
-      "Pellentesque vulputate urna ac quam lacinia, quis venenatis velit sodales. Ut eget tortor lacus. Nam est nisi, venenatis commodo vehicula ut, tristique ut augue. Nulla convallis commodo mauris a interdum.",
+    jobTitle: "Desenvolvedor Frontend Sênior",
+    skills: [
+      "Typescript",
+      "Javascript",
+      "React",
+      "styled-components",
+      "story-book",
+    ],
+    description: [
+      "Trabalhou em colaboração com o time de design para a criação da nova biblioteca de Design System. Incluindo a manutenção e criação de novos componentes.",
+      "Desenvolveu e manteve o software da empresa, colaborando com o time para melhorias de performance, acessibilidade e treinamentos internos para o time de Frontend.",
+    ],
     startDate: "Oct 2018",
     endDate: "Set 2019",
     companyURL: "https://bornlogic.com",
   },
   {
-    id: "unimestre",
-    companyName: "Unimestre",
-    jobTitle: "Desenvolvedor Front-end",
-    skills: ["React", "Next.js", "Styled Components"],
-    description:
-      "Aliquam eu elementum augue. Fusce scelerisque pulvinar odio fringilla tristique. Phasellus ut porta mauris. Suspendisse posuere neque eu dictum vehicula. Sed vel urna eleifend, porttitor sem vitae, molestie tellus. Aenean a aliquam nulla. Morbi risus arcu, feugiat id lorem elementum, faucibus porta tortor. Mauris vehicula tellus eu arcu dignissim pellentesque a non massa. Integer quis volutpat massa. Nunc enim velit, tempus ac ligula sit amet, gravida fringilla velit.",
-    startDate: "Oct 2018",
-    endDate: "Set 2019",
-    companyURL: "https://unimestre.com",
-  },
-  {
     id: "eureca",
     companyName: "Eureca",
-    jobTitle: "Desenvolvedor Front-end",
-    skills: ["React", "Next.js", "Styled Components"],
-    description: [
-      "Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst. Aliquam eu elementum augue. Fusce scelerisque pulvinar odio fringilla tristique.",
+    jobTitle: "Desenvolvedor Fullstack Sênior",
+    skills: [
+      "Typescript",
+      "Javascript",
+      "NodeJS",
+      "React",
+      "Gatsby",
+      "SSR",
+      "Mailchimp",
+      "GraphQL",
+      "Material-UI",
     ],
-    startDate: "Oct 2018",
-    endDate: "Set 2019",
+    description: [
+      "Atuou de maneira integral na nova plataforma da Eureca, dando manunteção, criando novas features incluindo backend.",
+      "Criou a landing page Eufest (projeto paralelo da empresa, citado na seção abaixo).",
+    ],
+    startDate: "Nov 2019",
+    endDate: "Nov 2020",
     companyURL: "https://eureca.me",
+  },
+  {
+    id: "amcom",
+    companyName: "AMcom",
+    jobTitle: "Desenvolvedor Frontend Sênior",
+    skills: ["React", "React-native", "styled-components"],
+    description:
+      "Atuou no desenvolvimentos e manutenção de diferentes projetos para clientes da AMcom.",
+    startDate: "Nov 2018",
+    endDate: "Oct 2019",
+    companyURL: "https://amcom.com.br",
+  },
+  {
+    id: "linx",
+    companyName: "Linx",
+    jobTitle: "Desenvolvedor Frontend",
+    skills: [
+      "Typescript",
+      "Javascript",
+      "React",
+      "Redux",
+      "Redux Saga",
+      "PostgreSQL",
+      "styled-component",
+      "Electron",
+    ],
+    description: `Desenvolveu e manteve três aplicações desktop para cozinhas industriais da Petrobras.`,
+    startDate: "Dec 2016",
+    endDate: "Aug 2018",
+    companyURL: "https://www.linx.com.br/",
+  },
+  {
+    id: "unimestre",
+    companyName: "Unimestre",
+    jobTitle: "Desenvolvedor Fullstack Junior",
+    skills: [
+      "Javascript",
+      "jQuery",
+      "PHP",
+      "Pascal (Delphi)",
+      "MySQL",
+      "PostgreSQL",
+    ],
+    description: `Desenvolveu, manteve e enviou código para produção de projetos da empresa. Como sistemas acadêmicos, bibliotecários e algoritmos de cálculo de boletims.`,
+    startDate: "Jan 2012",
+    endDate: "Dec 2016",
+    companyURL: "https://unimestre.com",
   },
 ];
 
@@ -90,6 +137,7 @@ function ExperienceCard({ ...exp }: Experience) {
   return (
     <div className={className} ref={cardRef}>
       <h2 className="experienceCard__title">{exp.jobTitle}</h2>
+      <span>{`-`}</span>
       <a
         href={exp.companyURL}
         className="experienceCard__company"
@@ -101,7 +149,18 @@ function ExperienceCard({ ...exp }: Experience) {
       <span className="experienceCard__timing">
         {exp.startDate} - {exp.endDate}
       </span>
-      <p className="experienceCard__description">{exp.description}</p>
+      {Array.isArray(exp.description) ? (
+        <>
+          {exp.description.map((desc, i) => (
+            <p className="experienceCard__description" key={i}>
+              {desc}
+            </p>
+          ))}
+        </>
+      ) : (
+        <p className="experienceCard__description">{exp.description}</p>
+      )}
+
       <div className="experienceCard__skillsContainer">
         {exp.skills.map((skill) => (
           <Skill key={skill} name={skill} />

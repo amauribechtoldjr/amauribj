@@ -1,23 +1,45 @@
 import styles from "./styles.css";
+import { NavLink } from "@remix-run/react";
 
 export default function Navbar() {
   return (
     <nav className="navbar">
       <ul className="navbar__list">
         <li className="navbar__item">
-          <a href="#about" className="navbar__itemLink">
+          <NavLink
+            to="#about"
+            className={(props) =>
+              props.isActive
+                ? "navbar__itemLink navbar__itemLink--selected"
+                : "navbar__itemLink"
+            }
+          >
             Sobre mim
-          </a>
+          </NavLink>
         </li>
         <li className="navbar__item">
-          <a href="#experience" className="navbar__itemLink">
+          <NavLink
+            to="#experience"
+            className={(props) =>
+              props.isActive
+                ? "navbar__itemLink navbar__itemLink--selected"
+                : "navbar__itemLink"
+            }
+          >
             Experiências
-          </a>
+          </NavLink>
         </li>
         <li className="navbar__item">
-          <a href="#projects" className="navbar__itemLink">
+          <NavLink
+            to="#projects"
+            className={(props) =>
+              props.isActive
+                ? "navbar__itemLink navbar__itemLink--selected"
+                : "navbar__itemLink"
+            }
+          >
             Projetos
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>

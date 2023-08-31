@@ -26,3 +26,8 @@
   text-decoration: none;
   color: var(--color-black);
 }
+
+.navbar__itemLink--selected {
+  text-decoration: underline;
+  color: var(--color-black);
+}

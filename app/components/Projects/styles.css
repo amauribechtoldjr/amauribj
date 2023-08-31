@@ -18,8 +18,8 @@
 }
 
 .projectsCard__imgContainer {
-  min-width: 450px;
-  height: 450px;
+  min-width: 350px;
+  height: 350px;
 
   margin-right: var(--s-12);
   background-color: black;
@@ -30,10 +30,14 @@
 }
 
 .projectsCard__title {
-  margin: var(--s-16) 0;
-  font-size: var(--s-24);
+  margin: var(--s-12) 0;
+  font-size: var(--s-20);
   font-weight: 600;
   text-align: end;
+}
+
+.projectsCard__type {
+  font-size: var(--fs-14);
 }
 
 .projectsCard__titleLink {
