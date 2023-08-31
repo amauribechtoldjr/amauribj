@@ -92,7 +92,7 @@ function HeroAbout() {
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="sectionPage hero" id="about">
       <MainHero />
       <HeroAbout />
     </section>

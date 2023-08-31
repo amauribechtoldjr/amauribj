@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const _options = {
-  threshold: 0.6,
+  threshold: 0.4,
 };
 
 interface UserTransitionEffect {
@@ -39,7 +39,7 @@ export default function useTransitionEffect({
   return {
     ref,
     className: `${originalClassName} ${
-      isVisible ? "transitionVisible" : "transitionHide"
+      isVisible ? "oldtransitionVisible" : "oldtransitionHide"
     }`,
   };
 }

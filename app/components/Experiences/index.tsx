@@ -6,6 +6,7 @@ interface Experience {
   id: string;
   description: string | string[];
   companyName: string;
+  companyURL: string;
   jobTitle: string;
   skills: string[];
   startDate: string;
@@ -32,6 +33,7 @@ const experiences: Experience[] = [
       "Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst.",
     startDate: "Jan 2020",
     endDate: "Current",
+    companyURL: "https://solides.com.br",
   },
   {
     id: "amcom",
@@ -42,6 +44,7 @@ const experiences: Experience[] = [
       "Cras at viverra libero. Suspendisse rutrum sem id lectus gravida, ut pellentesque neque dictum. Duis nec lorem ac mauris pretium accumsan. Sed accumsan urna nec neque lobortis sodales. In hac habitasse platea dictumst.",
     startDate: "Oct 2018",
     endDate: "Set 2019",
+    companyURL: "https://amcom.com.br",
   },
   {
     id: "bornlogic",
@@ -52,6 +55,7 @@ const experiences: Experience[] = [
       "Pellentesque vulputate urna ac quam lacinia, quis venenatis velit sodales. Ut eget tortor lacus. Nam est nisi, venenatis commodo vehicula ut, tristique ut augue. Nulla convallis commodo mauris a interdum.",
     startDate: "Oct 2018",
     endDate: "Set 2019",
+    companyURL: "https://bornlogic.com",
   },
   {
     id: "unimestre",
@@ -62,6 +66,7 @@ const experiences: Experience[] = [
       "Aliquam eu elementum augue. Fusce scelerisque pulvinar odio fringilla tristique. Phasellus ut porta mauris. Suspendisse posuere neque eu dictum vehicula. Sed vel urna eleifend, porttitor sem vitae, molestie tellus. Aenean a aliquam nulla. Morbi risus arcu, feugiat id lorem elementum, faucibus porta tortor. Mauris vehicula tellus eu arcu dignissim pellentesque a non massa. Integer quis volutpat massa. Nunc enim velit, tempus ac ligula sit amet, gravida fringilla velit.",
     startDate: "Oct 2018",
     endDate: "Set 2019",
+    companyURL: "https://unimestre.com",
   },
   {
     id: "eureca",
@@ -73,6 +78,7 @@ const experiences: Experience[] = [
     ],
     startDate: "Oct 2018",
     endDate: "Set 2019",
+    companyURL: "https://eureca.me",
   },
 ];
 
@@ -84,7 +90,12 @@ function ExperienceCard({ ...exp }: Experience) {
   return (
     <div className={className} ref={cardRef}>
       <h2 className="experienceCard__title">{exp.jobTitle}</h2>
-      <a href={exp.companyName} className="experienceCard__company">
+      <a
+        href={exp.companyURL}
+        className="experienceCard__company"
+        target="_blank"
+        rel="noreferrer"
+      >
         {exp.companyName}
       </a>
       <span className="experienceCard__timing">
@@ -102,7 +113,7 @@ function ExperienceCard({ ...exp }: Experience) {
 
 export default function Experiences() {
   return (
-    <section className={"experiences"}>
+    <section className="sectionPage experiences" id="experience">
       <div>
         <h2 className="kungfuheading experiences__title">Experiência</h2>
       </div>

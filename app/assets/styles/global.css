@@ -2,6 +2,14 @@ html {
   font-size: var(--fs-10);
 
   font-family: Arial, sans-serif;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-padding-top: 8vh;
 }
 
 body {
@@ -16,17 +24,23 @@ body {
   margin: 0;
 }
 
+.sectionPage {
+  max-height: 92vh;
+
+  padding: var(--s-96) 0;
+}
+
 .kungfuheading {
   font-family: "kungfumaster";
   letter-spacing: var(--ls-default);
 }
 
-.transitionHide {
+.oldtransitionHide {
   opacity: 0;
   transform: translateX(100px);
 }
 
-.transitionVisible {
+.oldtransitionVisible {
   opacity: 1;
   transform: translateX(0);
 }

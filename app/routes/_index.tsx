@@ -4,6 +4,7 @@ import Experiences, {
   links as experiencesLinks,
 } from "~/components/Experiences";
 import styles from "~/assets/styles/index.css";
+import Projects, { links as projectsLinks } from "~/components/Projects";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -17,6 +18,7 @@ export default function Index() {
     <main className="main">
       <Hero />
       <Experiences />
+      <Projects />
     </main>
   );
 }
@@ -25,4 +27,5 @@ export const links = () => [
   { rel: "stylesheet", href: styles },
   ...heroLInks(),
   ...experiencesLinks(),
+  ...projectsLinks(),
 ];

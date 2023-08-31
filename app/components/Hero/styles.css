@@ -3,8 +3,6 @@
   flex-direction: column;
   align-items: center;
   width: var(--max-container-size);
-  min-height: 92vh;
-  padding: var(--s-96) 0;
 }
 
 .hero__main {

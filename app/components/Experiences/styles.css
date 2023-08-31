@@ -1,20 +1,17 @@
 .experiences {
-  width: var(--max-container-size);
-  max-width: var(--max-container-size);
+  width: 900px;
 
-  height: 100%;
-
-  margin-bottom: var(--s-64);
   transition: 150ms;
 }
 
 .experiences__title {
-  font-size: var(--fs-18);
-  margin: var(--s-12) 0;
+  font-size: var(--fs-24);
+  margin: var(--s-48) 0;
+  margin-top: 0;
 }
 
 .experiences__cardsContainer {
-  max-height: 600px;
+  max-height: 850px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -35,15 +32,11 @@
 /* ExperienceCard */
 .experienceCard {
   transition: 150ms;
-  margin: var(--s-32) 0;
+  margin-bottom: var(--s-32);
 }
 
 .experienceCard:last-child {
   margin-bottom: 0;
-}
-
-.experienceCard:first-child {
-  margin-top: 0;
 }
 
 .experienceCard__title {

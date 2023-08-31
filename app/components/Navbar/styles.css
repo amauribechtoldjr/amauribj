@@ -1,9 +1,13 @@
 .navbar {
+  position: fixed;
   font-weight: 800;
   padding: var(--s-20) 0;
   font-family: "kungfumaster";
   letter-spacing: var(--ls-default);
+  background-color: var(--color-primary-1);
   height: 8vh;
+  width: 100%;
+  z-index: 100;
 }
 
 .navbar__list {
@@ -16,4 +20,9 @@
 .navbar__item {
   font-size: var(--fs-18);
   cursor: pointer;
+}
+
+.navbar__itemLink {
+  text-decoration: none;
+  color: var(--color-black);
 }
