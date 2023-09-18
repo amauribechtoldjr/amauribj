@@ -1,6 +1,5 @@
 import useTransitionEffect from "~/hooks/useTransitionEffect";
 import Skill from "../Skill";
-import styles from "./styles.css";
 
 interface Experience {
   id: string;
@@ -131,37 +130,36 @@ const experiences: Experience[] = [
 
 function ExperienceCard({ ...exp }: Experience) {
   const { ref: cardRef, className } = useTransitionEffect({
-    originalClassName: "experienceCard",
+    originalClassName: "transition-all my-16",
   });
 
   return (
     <div className={className} ref={cardRef}>
-      <h2 className="experienceCard__title">{exp.jobTitle}</h2>
-      <span>{`-`}</span>
+      <h2 className="text-2xl font-bold my-2 inline mr-2">{exp.jobTitle}</h2>
+      <span className="mr-2">{`-`}</span>
       <a
         href={exp.companyURL}
-        className="experienceCard__company"
+        className="font-bold underline"
         target="_blank"
         rel="noreferrer"
       >
         {exp.companyName}
       </a>
-      <span className="experienceCard__timing">
+      <span className="block my-2">
         {exp.startDate} - {exp.endDate}
       </span>
       {Array.isArray(exp.description) ? (
         <>
           {exp.description.map((desc, i) => (
-            <p className="experienceCard__description" key={i}>
+            <p className="pr-80 block my-2" key={i}>
               {desc}
             </p>
           ))}
         </>
       ) : (
-        <p className="experienceCard__description">{exp.description}</p>
+        <p className="pr-80 block my-2">{exp.description}</p>
       )}
-
-      <div className="experienceCard__skillsContainer">
+      <div className="my-4 flex gap-2 max-w-3xl flex-wrap">
         {exp.skills.map((skill) => (
           <Skill key={skill} name={skill} />
         ))}
@@ -172,11 +170,11 @@ function ExperienceCard({ ...exp }: Experience) {
 
 export default function Experiences() {
   return (
-    <section className="sectionPage experiences" id="experience">
+    <section>
       <div>
-        <h2 className="kungfuheading experiences__title">Experiência</h2>
+        <h2 className="font-title text-4xl">Experiência</h2>
       </div>
-      <div className="experiences__cardsContainer">
+      <div>
         {experiences.map((exp) => (
           <ExperienceCard key={exp.id} {...exp} />
         ))}
@@ -184,5 +182,3 @@ export default function Experiences() {
     </section>
   );
 }
-
-export const links = () => [{ rel: "stylesheet", href: styles }];

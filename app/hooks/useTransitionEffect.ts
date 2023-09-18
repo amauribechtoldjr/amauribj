@@ -29,17 +29,19 @@ export default function useTransitionEffect({
       observer.observe(ref.current);
     }
 
+    const { current } = ref;
+
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (current) {
+        observer.unobserve(current);
       }
     };
-  }, [ref]);
+  }, [options]);
 
   return {
     ref,
     className: `${originalClassName} ${
-      isVisible ? "oldtransitionVisible" : "oldtransitionHide"
+      isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-44"
     }`,
   };
 }

@@ -1,11 +1,11 @@
-import styles from "./styles.css";
-
 interface SkillProps {
   name: string;
 }
 
 export default function Skill({ name }: SkillProps) {
-  return <div className="skill">{name}</div>;
+  return (
+    <div className="inline-block py-2 px-4 bg-black text-1xl text-white">
+      {name}
+    </div>
+  );
 }
-
-export const links = () => [{ rel: "stylesheet", href: styles }];
