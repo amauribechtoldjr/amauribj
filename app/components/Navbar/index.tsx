@@ -2,7 +2,7 @@ import { NavLink } from "@remix-run/react";
 
 export default function Navbar() {
   return (
-    <nav>
+    <nav className="hidden md:block">
       <ul>
         <li>
           <NavLink to="/" className={(props) => (props.isActive ? "" : "")}>
