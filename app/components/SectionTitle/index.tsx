@@ -4,7 +4,9 @@ interface SectionTitleProps extends ComponentProps<"div"> {}
 
 const SeciontTitle: FC<SectionTitleProps> = ({ children }) => {
   return (
-    <h2 className="font-bold my-8 font-title tracking-widest">{children}</h2>
+    <h2 className="font-bold my-8 font-title tracking-widest text-2xl">
+      {children}
+    </h2>
   );
 };
 

@@ -30,7 +30,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-primary-1">
         <header>
           <Navbar />
         </header>
