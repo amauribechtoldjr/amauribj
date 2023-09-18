@@ -1,7 +1,7 @@
 import type { V2_MetaFunction } from "@remix-run/node";
 import Experiences from "~/components/Experiences";
 import Hero from "~/components/Hero";
-import Projects from "~/components/Projects";
+// import Projects from "~/components/Projects";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -15,7 +15,7 @@ export default function Index() {
     <main>
       <Hero />
       <Experiences />
-      <Projects />
+      {/* <Projects /> */}
     </main>
   );
 }

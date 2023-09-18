@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const _options = {
-  threshold: 0.4,
+  threshold: 0.1,
 };
 
 interface UserTransitionEffect {

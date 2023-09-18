@@ -1,5 +1,7 @@
 import useTransitionEffect from "~/hooks/useTransitionEffect";
 import Skill from "../Skill";
+import SeciontTitle from "../SectionTitle";
+import Section from "../Section";
 
 interface Experience {
   id: string;
@@ -130,12 +132,12 @@ const experiences: Experience[] = [
 
 function ExperienceCard({ ...exp }: Experience) {
   const { ref: cardRef, className } = useTransitionEffect({
-    originalClassName: "transition-all my-16",
+    originalClassName: "transition-all my-8",
   });
 
   return (
     <div className={className} ref={cardRef}>
-      <h2 className="text-2xl font-bold my-2 inline mr-2">{exp.jobTitle}</h2>
+      <h2 className="text-1xl font-bold my-2 inline mr-2">{exp.jobTitle}</h2>
       <span className="mr-2">{`-`}</span>
       <a
         href={exp.companyURL}
@@ -151,13 +153,13 @@ function ExperienceCard({ ...exp }: Experience) {
       {Array.isArray(exp.description) ? (
         <>
           {exp.description.map((desc, i) => (
-            <p className="pr-80 block my-2" key={i}>
+            <p className="block my-2 text-sm" key={i}>
               {desc}
             </p>
           ))}
         </>
       ) : (
-        <p className="pr-80 block my-2">{exp.description}</p>
+        <p className="block my-2 text-sm">{exp.description}</p>
       )}
       <div className="my-4 flex gap-2 max-w-3xl flex-wrap">
         {exp.skills.map((skill) => (
@@ -170,15 +172,15 @@ function ExperienceCard({ ...exp }: Experience) {
 
 export default function Experiences() {
   return (
-    <section>
+    <Section>
       <div>
-        <h2 className="font-title text-4xl">Experiência</h2>
+        <SeciontTitle>Experince</SeciontTitle>
       </div>
       <div>
         {experiences.map((exp) => (
           <ExperienceCard key={exp.id} {...exp} />
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

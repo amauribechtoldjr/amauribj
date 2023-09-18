@@ -1,12 +1,14 @@
 import linkedinLogo from "~/assets/images/logos/linkedin.png";
 import githubLogo from "~/assets/images/logos/github.png";
+import SeciontTitle from "../SectionTitle";
+import Section from "../Section";
 // import Skill from "../Skill";
 
 function MainHero() {
   return (
     <div className="w-full flex items-center">
-      <div className="mx-4">
-        <h2 className="text-2xl font-bold font-title">
+      <div>
+        <h2 className="text-3xl font-bold font-title tracking-wider">
           Amauri Bechtold Junior
         </h2>
         <p className="my-4">
@@ -34,8 +36,8 @@ function MainHero() {
 
 function HeroAbout() {
   return (
-    <div className="mx-4">
-      <h2 className="font-bold my-8">About</h2>
+    <div>
+      <SeciontTitle>About</SeciontTitle>
       <p>
         I am a Software Engineer with 12 years of experience, working mostly
         with Javascript and its ecosystem.
@@ -57,9 +59,9 @@ function HeroAbout() {
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center my-8">
+    <Section>
       <MainHero />
       <HeroAbout />
-    </section>
+    </Section>
   );
 }
