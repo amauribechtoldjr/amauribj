@@ -49,7 +49,7 @@ function HeroAbout() {
         knowledge about performance, code quality, design patterns, building
         code review culture.
       </p>
-      <p className="">
+      <p>
         Also, I like to mentor people and help them to start their careers in
         the software development area.
       </p>
