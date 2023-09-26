@@ -1,7 +1,7 @@
 import type { V2_MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
-import Navbar, { links as navbarLinks } from "~/components/Navbar/Navbar";
-import styles from "~/styles/index.css";
+import Experiences from "~/components/Experiences";
+import Hero from "~/components/Hero";
+import Projects from "~/components/Projects";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -12,15 +12,10 @@ export const meta: V2_MetaFunction = () => {
 
 export default function Index() {
   return (
-    <main className="teste">
-      <div>Amauri Bechtold Junior - Portfolio</div>
-      <Link to="/test">Test</Link>
-      <Navbar />
+    <main>
+      <Hero />
+      <Experiences />
+      <Projects />
     </main>
   );
 }
-
-export const links = () => [
-  ...navbarLinks(),
-  { rel: "stylesheet", href: styles },
-];

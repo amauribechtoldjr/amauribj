@@ -1,4 +1,7 @@
-import globalStyles from "~/styles/global.css";
+import globalStyles from "~/assets/styles/global.css";
+import kungFuMasterFont from "~/assets/fonts/kungfumaster.ttf";
+import fontFacesStyles from "~/assets/styles/fonts.css";
+import Navbar from "~/components/Navbar";
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
@@ -9,8 +12,13 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import stylesheet from "~/tailwind.css";
+
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: globalStyles },
+  { rel: "stylesheet", href: fontFacesStyles },
+  { rel: "stylesheet", href: kungFuMasterFont },
+  { rel: "stylesheet", href: stylesheet },
 ];
 
 export default function App() {
@@ -22,7 +30,10 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-primary-1">
+        <header>
+          <Navbar />
+        </header>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
