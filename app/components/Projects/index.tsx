@@ -52,8 +52,8 @@ function ProjectsCard({ img, project, skills, githubLink }: ProjectsCardProps) {
 
 const Projects = () => {
   return (
-    <Section variant={"outline"}>
-      <SeciontTitle>Outros projetos</SeciontTitle>
+    <Section variant={"outline"} id="projects" className="p-4 my-12">
+      <SeciontTitle>Projects</SeciontTitle>
       <div>
         {/* <ProjectsCard
           // img={{ src: eufestGif, alt: "" }}

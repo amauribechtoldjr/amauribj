@@ -1,7 +1,6 @@
 import globalStyles from "~/assets/styles/global.css";
 import kungFuMasterFont from "~/assets/fonts/kungfumaster.ttf";
 import fontFacesStyles from "~/assets/styles/fonts.css";
-import Navbar from "~/components/Navbar";
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
@@ -31,9 +30,6 @@ export default function App() {
         <Links />
       </head>
       <body className="bg-primary-1">
-        <header>
-          <Navbar />
-        </header>
         <Outlet />
         <ScrollRestoration />
         <Scripts />

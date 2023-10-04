@@ -2,11 +2,11 @@ import { type VariantProps, cva } from "class-variance-authority";
 import type { ComponentProps, FC } from "react";
 import { cn } from "~/utils/styles";
 
-const sectionVariants = cva("mx-4 my-12", {
+const sectionVariants = cva("mx-4", {
   variants: {
     variant: {
       default: "",
-      outline: "border-2 border-black p-4",
+      outline: "border-2 border-black",
     },
   },
   defaultVariants: {

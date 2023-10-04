@@ -132,7 +132,7 @@ const experiences: Experience[] = [
 
 function ExperienceCard({ ...exp }: Experience) {
   const { ref: cardRef, className } = useTransitionEffect({
-    originalClassName: "transition-all my-8",
+    originalClassName: "first:my-0 transition-all my-8",
   });
 
   return (
@@ -172,7 +172,7 @@ function ExperienceCard({ ...exp }: Experience) {
 
 export default function Experiences() {
   return (
-    <Section>
+    <Section id="experience" className="lg:pt-12">
       <div>
         <SeciontTitle>Experince</SeciontTitle>
       </div>

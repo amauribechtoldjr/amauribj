@@ -1,8 +1,6 @@
 import linkedinLogo from "~/assets/images/logos/linkedin.png";
 import githubLogo from "~/assets/images/logos/github.png";
-import SeciontTitle from "../SectionTitle";
 import Section from "../Section";
-// import Skill from "../Skill";
 
 function MainHero() {
   return (
@@ -34,34 +32,10 @@ function MainHero() {
   );
 }
 
-function HeroAbout() {
-  return (
-    <div>
-      <SeciontTitle>About</SeciontTitle>
-      <p>
-        I am a Software Engineer with 12 years of experience, working mostly
-        with Javascript and its ecosystem.
-      </p>
-      <p className="my-2">
-        My current focus is learning about web performance, code quality and
-        every type of technology that I am interested in.My work comprises
-        improving the architectures/products I work with contributing my
-        knowledge about performance, code quality, design patterns, building
-        code review culture.
-      </p>
-      <p>
-        Also, I like to mentor people and help them to start their careers in
-        the software development area.
-      </p>
-    </div>
-  );
-}
-
 export default function Hero() {
   return (
-    <Section>
+    <Section className="pt-12">
       <MainHero />
-      <HeroAbout />
     </Section>
   );
 }
