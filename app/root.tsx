@@ -12,6 +12,7 @@ import {
 } from "@remix-run/react";
 
 import stylesheet from "~/tailwind.css";
+import { AnimatePresence } from "framer-motion";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: globalStyles },
@@ -29,8 +30,10 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-primary-1">
-        <Outlet />
+      <body className="">
+        <AnimatePresence mode="wait">
+          <Outlet />
+        </AnimatePresence>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

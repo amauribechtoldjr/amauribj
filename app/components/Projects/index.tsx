@@ -23,12 +23,14 @@ function ProjectsCard({ img, project, skills, githubLink }: ProjectsCardProps) {
       <div className="flex items-center my-2">
         {project.url ? (
           <a href={project.url} target="_blank" rel="noreferrer">
-            <h2 className="inline font-bold text-1xl underline">
+            <h2 className="inline font-bold text-1xl underline text-primary-1">
               {project.name}
             </h2>
           </a>
         ) : (
-          <h2 className="inline font-bold text-1xl">{project.name}</h2>
+          <h2 className="inline font-bold text-1xl text-primary-1">
+            {project.name}
+          </h2>
         )}
         {githubLink && (
           <div className="inline-flex items-center flex-row">

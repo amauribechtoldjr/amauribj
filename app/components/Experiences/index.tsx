@@ -137,7 +137,9 @@ function ExperienceCard({ ...exp }: Experience) {
 
   return (
     <div className={className} ref={cardRef}>
-      <h2 className="text-1xl font-bold my-2 inline mr-2">{exp.jobTitle}</h2>
+      <h2 className="text-1xl font-bold my-2 inline mr-2 text-primary-1">
+        {exp.jobTitle}
+      </h2>
       <span className="mr-2">{`-`}</span>
       <a
         href={exp.companyURL}
